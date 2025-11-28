@@ -1,0 +1,21 @@
+<section class="banner">
+    <h2>O seu novo carro te espera!</h2>
+    <p>Financie em até 60x!</p>
+</section>
+
+<section class="estoque">
+    <h2>Veículos destaques de hoje!</h2>
+    <div class="grid">
+        
+        <div class="card" *ngFor="let carro of veiculosDestaque">
+            
+            <img [src]="carro.imagem" [alt]="carro.nome">
+            
+            <h3>{{ carro.nome }}</h3>
+            <p>{{ carro.preco }}</p>
+            
+            <button (click)="mostrarDetalhes(carro.nome)">Detalhes</button>
+        </div>
+
+    </div>
+</section>

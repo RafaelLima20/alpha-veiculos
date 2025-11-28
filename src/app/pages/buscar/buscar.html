@@ -1,0 +1,18 @@
+<section class="busca">
+    <h2>Buscar Veículos</h2>
+    <form (submit)="buscarVeiculos(marcaInput.value, modeloInput.value, anoInput.value)">
+        <select #marcaInput>
+            <option>Marca</option>
+            <option>Chevrolet</option>
+            </select>
+        <select #modeloInput>
+            <option>Modelo</option>
+            <option>Onix</option>
+            </select>
+        <select #anoInput>
+            <option>Ano</option>
+            <option>2025</option>
+            </select>
+        <button type="submit">Buscar</button>
+    </form>
+</section>
