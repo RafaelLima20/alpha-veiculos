@@ -17,3 +17,4 @@ export class Buscar {
     // Em um projeto real, você faria uma chamada a uma API aqui
   }
 }
+
