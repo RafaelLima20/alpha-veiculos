@@ -5,17 +5,18 @@
 
 <section class="estoque">
     <h2>Veículos destaques de hoje!</h2>
-    <div class="grid">
-        
-        <div class="card" *ngFor="let carro of veiculosDestaque">
-            
-            <img [src]="carro.imagem" [alt]="carro.nome">
-            
-            <h3>{{ carro.nome }}</h3>
-            <p>{{ carro.preco }}</p>
-            
-            <button (click)="mostrarDetalhes(carro.nome)">Detalhes</button>
-        </div>
+    
+    <p *ngIf="veiculosDestaque.length === 0" style="text-align:center">Carregando ofertas...</p>
 
+    <div class="grid">
+        <div class="card" *ngFor="let item of veiculosDestaque">
+            
+            <img [src]="item.imagem" [alt]="item.nome">
+            
+            <h3>{{ item.nome }}</h3>
+            <p>{{ item.preco }}</p>
+            
+            <button [routerLink]="['/detalhes', item.id]">Detalhes</button>
+        </div>
     </div>
 </section>

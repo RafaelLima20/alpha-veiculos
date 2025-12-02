@@ -1,0 +1,19 @@
+.sobre-container {
+    display: flex; gap: 40px; max-width: 1000px; margin: 50px auto; padding: 20px;
+    align-items: center;
+}
+.texto { flex: 1; }
+.texto h1 { color: #002244; margin-bottom: 20px; }
+.texto p { line-height: 1.6; color: #555; margin-bottom: 15px; }
+
+.stats { display: flex; gap: 30px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+.stats div { text-align: center; color: #666; font-size: 0.9rem; }
+.stats strong { display: block; font-size: 1.5rem; color: #002244; }
+
+.imagem { flex: 1; text-align: center; }
+.imagem img { width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 10px 10px 0px #eee; }
+
+/* Celular */
+@media (max-width: 768px) {
+    .sobre-container { flex-direction: column-reverse; }
+}

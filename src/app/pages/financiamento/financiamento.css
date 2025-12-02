@@ -1,0 +1,17 @@
+.page-container { padding: 40px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+.subtitle { color: #666; margin-bottom: 40px; }
+.planos-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+.card-plano {
+    border: 1px solid #ddd; padding: 30px; border-radius: 10px; width: 280px;
+    background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.destaque { font-size: 3rem; font-weight: bold; color: #002244; margin: 10px 0; }
+ul { list-style: none; padding: 0; margin: 20px 0; color: #555; line-height: 1.8; }
+
+button {
+    width: 100%; padding: 12px; border: none; border-radius: 5px; cursor: pointer;
+    background: #eee; font-weight: bold; color: #333;
+}
+.destaque-card { border: 2px solid #002244; transform: scale(1.05); }
+.btn-destaque { background: #002244; color: white; }

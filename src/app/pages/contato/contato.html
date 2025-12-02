@@ -1,1 +1,27 @@
-<p>contato works!</p>
+<section class="contato-wrapper">
+    <h1>Fale Conosco</h1>
+    
+    <div class="contato-box">
+        <!-- Lado Esquerdo: Informações -->
+        <div class="info">
+            <h3>Canais de Atendimento</h3>
+            <p>📍 Rua Gervásio Pires 826, Recife, PE, 50050-415</p>
+            <p>📞 (81) 99560-4266</p>
+            <p>📧 contato@alphaveiculos.com</p>
+            <br>
+            <h3>Horário</h3>
+            <p>Seg a Sex: 08h às 18h</p>
+            <p>Sáb: 09h às 13h</p>
+        </div>
+
+        <!-- Lado Direito: Formulário -->
+        <form class="form">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <input type="tel" placeholder="Seu Telefone">
+            <textarea rows="4" placeholder="Como podemos ajudar?"></textarea>
+            
+            <button type="button" (click)="enviarMensagem()">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>

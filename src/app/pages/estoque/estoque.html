@@ -1,0 +1,32 @@
+<section class="busca-container">
+    <h2>Nosso Estoque</h2>
+    
+    <div class="form-wrapper">
+        <input type="text" 
+               class="input-busca" 
+               placeholder="Pesquise o nome do carro (ex: Argo)..." 
+               [(ngModel)]="termoBusca">
+               
+        <button class="btn-buscar" (click)="buscar()">Pesquisar</button>
+    </div>
+</section>
+
+<section class="resultados">
+    
+    <div *ngIf="veiculosFiltrados.length === 0" style="text-align: center; padding: 20px;">
+        <p>Nenhum veículo encontrado.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card" *ngFor="let carro of veiculosFiltrados">
+            <img [src]="carro.imagem" [alt]="carro.nome">
+            
+            <div class="card-info">
+                <h3>{{ carro.nome }}</h3>
+                <p>{{ carro.preco }}</p>
+                <a [routerLink]="['/detalhes', carro.id]" class="btn-detalhes">Ver Detalhes</a>
+            </div>
+        </div>
+    </div>
+    
+</section>

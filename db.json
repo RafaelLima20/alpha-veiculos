@@ -1,0 +1,34 @@
+{
+  "veiculos": [
+    {
+      "id": "1",
+      "nome": "FIAT ARGO 2023",
+      "preco": "R$ 65.000,00",
+      "imagem": "/assets/fiatargo2023.jpg"
+    },
+    {
+      "id": "2",
+      "nome": "Volkwagem GOL 2022",
+      "preco": "R$ 40.990",
+      "imagem": "/assets/vwgol2022.jpg"
+    },
+    {
+      "id": "3",
+      "nome": "Chevrolet ONIX LT 2024",
+      "preco": "R$ 80.990",
+      "imagem": "/assets/gmonix2024.jpg"
+    },
+    {
+      "id": "4",
+      "nome": "TOYOTA COROLLA 2020",
+      "preco": "R$ 95.000,00",
+      "imagem": "/assets/corolla2020.jpg"
+    },
+    {
+      "id": "5",
+      "nome": "FORD KA 2018",
+      "preco": "R$ 35.000,00",
+      "imagem": "/assets/fordka2018.jpg"
+    }
+  ]
+}

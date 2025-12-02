@@ -1,0 +1,30 @@
+<div class="container-detalhes" *ngIf="veiculo">
+  
+  <a routerLink="/" class="btn-voltar">← Voltar para o Início</a>
+
+  <div class="card-detalhe">
+    <div class="area-imagem">
+      <img [src]="veiculo.imagem" [alt]="veiculo.nome">
+    </div>
+
+    <div class="area-texto">
+      <h1>{{ veiculo.nome }}</h1>
+      <h2 class="preco">{{ veiculo.preco }}</h2>
+      
+      <p class="descricao">
+        Este veículo foi revisado e aprovado em nossa vistoria cautelar. 
+        Garantia de procedência e qualidade Alpha Veículos.
+        Entre em contato para agendar um Test-Drive.
+      </p>
+
+     <button class="btn-comprar" (click)="mostrarMensagem()">
+        Tenho Interesse
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="!veiculo" style="text-align: center; padding: 50px;">
+  <p>Carregando detalhes...</p>
+</div>

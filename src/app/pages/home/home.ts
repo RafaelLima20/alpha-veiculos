@@ -1,44 +1,39 @@
-// src/app/pages/home/home.ts
-
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Necessário para usar *ngFor
-
-// Define a estrutura de um veículo para garantir tipagem forte
-interface Veiculo {
-  nome: string;
-  preco: string;
-  imagem: string;
-}
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core'; // <--- 1. Importe ChangeDetectorRef
+import { CommonModule } from '@angular/common'; 
+import { RouterLink } from '@angular/router'; 
+import { VeiculosService, Veiculo } from '../../services/veiculos.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  // IMPORTANTE: Adiciona o CommonModule para que o *ngFor funcione no HTML
-  imports: [CommonModule], 
-  // APONTA PARA SEU ARQUIVO HTML
+  imports: [CommonModule, RouterLink], 
   templateUrl: './home.html', 
   styleUrl: './home.css'
 })
 export class Home implements OnInit {
 
-  // Lista de veículos (Array de objetos) para exibição dinâmica
-  veiculosDestaque: Veiculo[] = [
-    // ATENÇÃO: Verifique se a extensão (.jpeg) e o nome do arquivo estão EXATOS
-    { nome: 'FIAT ARGO 2023', preco: 'R$ 65.000,00', imagem: 'assets/fiatargo2023.jpg' },
-    { nome: 'Volkwagem GOL 2022', preco: 'R$ 40.990', imagem: 'assets/vwgol2022.jpg' },
-    { nome: 'Chevrolet ONIX LT 2024', preco: 'R$ 80.990', imagem: 'assets/gmonix2024.jpg' },
-    // Acrescentando mais carros de exemplo:
-    { nome: 'TOYOTA COROLLA 2020', preco: 'R$ 95.000,00', imagem: 'assets/corolla2020.jpg' }, 
-    { nome: 'FORD KA 2018', preco: 'R$ 35.000,00', imagem: 'assets/fordka2018.jpg' } 
-  ];
+  private veiculosService = inject(VeiculosService);
+  private cd = inject(ChangeDetectorRef); // <--- 2. Injete a ferramenta aqui
+
+  veiculosDestaque: Veiculo[] = []; 
   
-  // Implementação do método do ciclo de vida
   ngOnInit(): void {
-    // Código de inicialização, se necessário
+    this.carregarVeiculos();
   }
 
-  // Método chamado pelo botão "Detalhes" no HTML
-  mostrarDetalhes(nomeCarro: string): void {
-    alert(`Mostrando mais detalhes sobre o ${nomeCarro}...`);
+  carregarVeiculos(): void {
+    this.veiculosService.listarTodos().subscribe({
+      next: (dados) => {
+        this.veiculosDestaque = dados;
+        
+        // <--- 3. O PULO DO GATO ESTÁ AQUI:
+        this.cd.detectChanges(); // Força o Angular a atualizar a tela na hora!
+        
+        console.log('Dados atualizados na tela!');
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar carros:', erro);
+      }
+    });
   }
 }
