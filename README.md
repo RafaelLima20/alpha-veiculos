@@ -1,59 +1,41 @@
-# AlphaVeiculos
+Projeto Alpha Veículos 🚗
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Descrição do projeto:
 
-## Development server
+Projeto realizado para simular uma concessionária, um local onde realiza vendas de automóveis. 
 
-To start a local development server, run:
+Projeto desenvolvido para a disciplina de Desenvolvimento Web (Front-End). Aplicação SPA construída com Angular simulando uma concessionária de veículos.
 
-```bash
-ng serve
-```
+🚀 Tecnologias Usadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Angular (Standalone Components)
 
-## Code scaffolding
+JSON Server (API Fake)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+CSS Puro (Responsivo)
 
-```bash
-ng generate component component-name
-```
+TypeScript
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+⚙️ Como rodar o projeto
 
-```bash
-ng generate --help
-```
+1. Clone o repositório.
 
-## Building
+2. Instale as dependências: npm install
 
-To build the project run:
+3. Inicie a API Fake (em um terminal): npx json-server --watch db.json
 
-```bash
-ng build
-```
+4. Inicie o Angular (em outro terminal): ng serve
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+5. Acesse http://localhost:4200
 
-## Running unit tests
+📸 Capturas de Tela
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Home - <img width="1920" height="1012" alt="Home" src="https://github.com/user-attachments/assets/13890424-f2df-4391-a1a6-00caeb36ee46" />
+Detalhes - <img width="1920" height="1012" alt="Detalhes" src="https://github.com/user-attachments/assets/76da8d0c-2b80-47e6-aaff-f4c00241a311" />
+Estoque - <img width="1920" height="1012" alt="Estoque" src="https://github.com/user-attachments/assets/e1a8e865-a8e6-4051-9eb9-fdae8bc36c89" />
+Financiamento - <img width="1920" height="1012" alt="Financiamento" src="https://github.com/user-attachments/assets/22288a41-13e9-4486-a585-f08325d84665" />
+Sobre - <img width="1920" height="1012" alt="Sobre" src="https://github.com/user-attachments/assets/75768766-fa14-4763-a09d-e1fdbd9211df" />
+Contato - <img width="1920" height="1012" alt="Contato" src="https://github.com/user-attachments/assets/40a90207-ab1a-4dfd-8d4e-05096e72816b" />
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
